@@ -7,27 +7,26 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
-}
-header a {
-  text-decoration: none; /* Removes the underline */
-  color: inherit; /* Inherits the text color of the h1 */
+  display: flex;
+  justify-content: center; /* Centers the body content */
+  align-items: flex-start; /* Aligns content at the top */
+  min-height: 100vh;
+  flex-direction: column; /* Ensures the content flows from top to bottom */
 }
 
-header h1 {
-  font-family: 'Playfair Display', serif; /* Keep the desired font */
-  font-size: 3rem; /* Adjust the size if needed */
-  text-align: center; /* Ensure it's centered */
+/* Ensure everything is aligned */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 /* Header styles */
 header {
+  background-color: white;
   text-align: center;
-  padding: 20px;
-}
-
-header img {
+  padding: 20px 0; /* Padding adjusted to top/bottom */
   width: 100%;
-  max-width: 100%;
-  height: auto;
 }
 
 header h1 {
@@ -35,31 +34,55 @@ header h1 {
   font-size: 3em;
   color: #6b49a1;
   margin-top: 20px;
+  text-align: center;
+}
+
+/* Container for header and nav to align together */
+.header-container {
+  width: 100%;
+  text-align: center; /* Ensures everything inside this container is centered */
 }
 
 /* Navigation Links */
 .nav-links {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  justify-content: center; /* Centers the links horizontally */
+  gap: 20px; /* Adds spacing between the links */
+  width: 100%;
   margin-top: 20px;
+  padding: 10px 0;
 }
 
 .nav-links a {
   font-family: 'Playfair Display', serif;
-  color: #6a1b9a;
-  background-color: #6b49a1;
+  color: #6a1b9a;  /* Purple color */
+  background-color: #fff;
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
   font-size: 1.2em;
+  border: 2px solid #6a1b9a; /* Border to match the color */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-links a:hover {
-  background-color: lavender;
-  color: #6b49a1;
+  background-color: #6a1b9a; /* Hover color */
+  color: #fff; /* White text on hover */
 }
 
+/* Footer Styling */
+footer {
+  background-color: white;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  margin-top: 50px;
+}
+
+footer p {
+  margin: 5px 0;
+}
 /* About Section */
 .about-section {
   display: flex;
@@ -68,6 +91,7 @@ header h1 {
   padding: 40px 20px;
   margin-top: 40px;
   text-align: left;
+  width: 100%;
 }
 
 .about-content {
@@ -98,6 +122,11 @@ header h1 {
   max-width: 650px;
   font-size: 1.2em;
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Aligns the text to the left */
+  text-align: left;
 }
 
 .about-text h2 {
@@ -118,35 +147,115 @@ strong {
 
 /* Footer Styling */
 footer {
-  font-family: 'Playfair Display', serif; /* Apply Playfair font to footer */
+  background-color: white;
+  font-family: 'Playfair Display', serif;
   text-align: center;
   margin-top: 50px;
   padding: 20px;
+  width: 100%;
 }
 
 footer p {
   margin: 5px 0;
 }
-/* Navigation Links */
-.nav-links {
+
+/* Section styling for smaller content areas */
+section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  line-height: 1.6;
+  font-family: 'Playfair Display', serif;
+  color: #333;
+}
+
+h1 {
+  font-size: 2em;
+  color: #3f2c50;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: #bf34db;
+  text-align: center;
+  margin-top: 10px;
+}
+
+blockquote {
+  font-style: italic;
+  font-size: 1.2em;
+  color: #555;
+  border-left: 4px solid #a634db;
+  padding-left: 15px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+p {
+  margin: 15px 0;
+}
+
+/* About Section: Make sure the section containing the h2 is centered */
+#introduction {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
+  align-items: center;
+  padding: 40px 20px;
+  margin-top: 40px;
+  width: 100%;
+  text-align: left; /* Centers the text in the section but aligns left */
 }
 
-.nav-links a {
+h2 {
   font-family: 'Playfair Display', serif;
-  color: #6a1b9a;  /* Purple color */
-  background-color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 1.2em;
-  border: 2px solid #6a1b9a; /* Border to match the color */
+  font-size: 2.5em;
+  color: #6b49a1;
+  margin-bottom: 20px;
+  text-align: left; /* Aligns the h2 to the left */
 }
 
-.nav-links a:hover {
-  background-color: #6a1b9a; /* Hover color */
-  color: #fff; /* White text on hover */
+/* Update the parent container styles to center the text */
+.about-text {
+  flex: 2;
+  max-width: 650px;
+  font-size: 1.2em;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Ensure text aligns left */
+  text-align: left;
+}
+
+/* Typing effect */
+#typing-effect {
+  display: inline-block;
+  border-right: 2px solid #6b49a1; /* Cursor effect */
+  padding-right: 5px; /* Space between the text and cursor */
+  white-space: nowrap; /* Prevent the text from wrapping */
+  overflow: hidden; /* Hide overflow */
+  width: auto; /* Let the text take up its natural width */
+  animation: typing 3.5s steps(30, end) 1, blink 0.75s step-end infinite; /* Typing and blinking cursor animation */
+  visibility: visible; /* Ensure the text stays visible */
+}
+
+/* Keyframes for typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%; /* Full width of the text */
+  }
+}
+
+/* Keyframes for cursor blinking */
+@keyframes blink {
+  50% {
+    border-color: transparent; /* Hide the cursor at halfway */
+  }
+  100% {
+    border-color: #6b49a1; /* Show the cursor at the end */
+  }
 }
